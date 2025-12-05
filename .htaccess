@@ -1,0 +1,22 @@
+# Disable directory listing
+Options -Indexes
+
+# Enable Python execution
+AddType text/x-python .py
+AddHandler cgi-script .py
+
+# Prevent access to sensitive files
+<Files "bot.lock">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.json">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<FilesMatch "\.(env|txt|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
