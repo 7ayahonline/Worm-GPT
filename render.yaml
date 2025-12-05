@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: worm-gpt-bot
+    env: python
+    plan: free
+    
+    # Repository
+    repo: https://github.com/7ayahonline/Worm-GPT.git
+    branch: master
+    
+    # Build settings
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    
+    # Environment variables
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_BOT_ID
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_SECRET
+        sync: false
+      - key: PAYPAL_ENV
+        value: sandbox
+      - key: PAYPAL_ME_LINK
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.9
+    
+    # Directories
+    rootDir: .
+    
+    # Auto deploy
+    autoDeploy: true
