@@ -10,15 +10,15 @@ services:
     
     # Build settings
     buildCommand: pip install -r requirements.txt
-    startCommand: python bot.py
+    startCommand: python bot_webhook.py
     
     # Environment variables
     envVars:
       - key: TELEGRAM_BOT_TOKEN
         sync: false
-      - key: TELEGRAM_BOT_ID
+      - key: WEBHOOK_URL
         sync: false
-      - key: ADMIN_IDS
+      - key: WEBHOOK_SECRET
         sync: false
       - key: PAYPAL_CLIENT_ID
         sync: false
